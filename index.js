@@ -19,16 +19,19 @@
 
 // Part 2: PRIME TIME
 
-// prime number examples: 5,7,11,13,17,19,23,29
+// let x = 2;
 
-let x = 2;
+// for (let n = 1408; x < n; n++) {
+//     x = 2;
+//     while ((n + 1) % x > 0) {
+//         x++;
+//         if (x === n) {
+//             console.log(`The next prime number is: ${n + 1}!`)
+//         }
+//     }
+// }
 
-for (let n = 1408; x < n; n++) {
-    x = 2;
-    while ((n + 1) % x > 0) {
-        x++;
-        if (x === n) {
-            console.log(`The next prime number is: ${n + 1}!`)
-        }
-    }
-}
+// Part 3: Feeling Loopy
+
+
+let str = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.050\n";
