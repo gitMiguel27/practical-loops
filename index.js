@@ -23,14 +23,12 @@
 
 let x = 2;
 
-for (let n = 14; x < n; n++) {
+for (let n = 1408; x < n; n++) {
+    x = 2;
     while ((n + 1) % x > 0) {
         x++;
+        if (x === n) {
+            console.log(`The next prime number is: ${n + 1}!`)
+        }
     }
-    console.log("This is the value of n + 1: " + (n + 1));
-    console.log((n + 1) + " is no longer prime because it is divisible by: " + x);
-    // if ((n + 1) % 2 === 0) {
-    //     console.log("This is not a prime number because it is divisible by 2");
-    //     break;
-    // }
 }
