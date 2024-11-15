@@ -33,17 +33,32 @@
 
 // Part 3: Feeling Loopy
 
+let longString = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.050\n2,0.49,0.066,0.066\n3,0.98,0.087,0.080\n4,1.47,0.116,0.108\n5,1.96,0.142,0.138\n6,2.45,0.166,0.158\n7,2.94,0.193,0.174\n8,3.43,0.204,0.192\n9,3.92,0.226,0.205\n10,4.41,0.238,0.232";
 
-let str = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.050\n";
-let cellNumber = 1;
-let cell1 = "";
-let cell2 = "";
-let cell3 = "";
-let cell4 = "";
+let cellBlocksArray = longString.split("\n");
 
-// loop through string adding each character to a cell
-for (let i = 0; i < str.length; i++) {
-    // when the loop reaches a comma, close that cell, and start a new cell.
-
-}
-// when the loop reaches a break sequence, end the row and console log each cell.
+for (bigString of cellBlocksArray) {
+    // console.log(bigString);
+    let lilStringsArray = bigString.split(",");
+    // console.log(lilStringsArray);
+    let cell1 = "";
+    let cell2 = "";
+    let cell3 = "";
+    let cell4 = "";
+    for (let i = 0; i < lilStringsArray.length; i++) {
+        // console.log(lilStringsArray[i]);
+        if (i === 0) {
+            cell1 += lilStringsArray[i];
+        }
+        if (i === 1) {
+            cell2 += lilStringsArray[i];
+        }
+        if (i === 2) {
+            cell3 += lilStringsArray[i];
+        }
+        if (i === 3) {
+            cell4 += lilStringsArray[i];
+        }
+    };
+    console.log("This is a new cell block: " + cell1, cell2, cell3,cell4);
+};
