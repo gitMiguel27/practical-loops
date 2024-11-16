@@ -76,25 +76,60 @@
 
 // PART 2: EXPANDING FUNCTIONALITY
 
+// let longString = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
+
+// let cellBlocksArray = longString.split("\n");
+
+// let arrOfLilStringsArray = [];
+
+// for (bigString of cellBlocksArray) {
+//     let lilStringsArray = bigString.split(",");
+//     console.log(lilStringsArray);
+
+//     arrOfLilStringsArray.push(lilStringsArray);
+
+//     let numberOfColumns = lilStringsArray.length;
+//     // console.log(numberOfColumns);
+
+//     let stringToReturn = "This is a new cell block: ";
+//     for (let i = 0; i < numberOfColumns; i++) {
+//         stringToReturn += `${lilStringsArray[i]} `;
+//     };
+//     console.log(stringToReturn);
+// };
+// console.log(arrOfLilStringsArray);
+
+// PART 3: TRANSFORMING DATA
+
 let longString = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
 
 let cellBlocksArray = longString.split("\n");
 
 let arrOfLilStringsArray = [];
+let arrOfObjects = [];
 
 for (bigString of cellBlocksArray) {
     let lilStringsArray = bigString.split(",");
-    console.log(lilStringsArray);
+    // console.log(lilStringsArray);
 
     arrOfLilStringsArray.push(lilStringsArray);
 
     let numberOfColumns = lilStringsArray.length;
-    // console.log(numberOfColumns);
-
     let stringToReturn = "This is a new cell block: ";
     for (let i = 0; i < numberOfColumns; i++) {
         stringToReturn += `${lilStringsArray[i]} `;
     };
     console.log(stringToReturn);
 };
-console.log(arrOfLilStringsArray);
+
+let header = arrOfLilStringsArray[0];
+for (let i = 1; i < arrOfLilStringsArray.length; i++) {
+    let rowObject = {};
+    // console.log(arrOfLilStringsArray[i]);
+    for (let x = 0; x < arrOfLilStringsArray[i].length; x++) {
+        // console.log(arrOfLilStringsArray[i][x]);
+        rowObject[header[x].toLowerCase()] = arrOfLilStringsArray[i][x];
+    }
+    arrOfObjects.push(rowObject);
+};
+console.log(arrOfObjects);
