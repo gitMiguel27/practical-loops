@@ -169,7 +169,6 @@ let lastKey = "";
 for (let key in arrOfObjects[0]) {
     arrOfHeaders.push(key); 
 };
-console.log(arrOfHeaders);
 
 for (let h = 0; h < arrOfHeaders.length; h++) {
     if (h === arrOfHeaders.length - 1) {
@@ -179,13 +178,10 @@ for (let h = 0; h < arrOfHeaders.length; h++) {
         newString += `${arrOfHeaders[h].toLocaleUpperCase()}, `;
     };
 };
-console.log(lastKey);
 
 for (let c = 0; c < arrOfObjects.length; c++) {
-    console.log(arrOfObjects[c]);
     for (let key in arrOfObjects[c]) {
         let lastObjectKey = arrOfObjects[c][lastKey];
-        console.log(lastObjectKey);
         if (arrOfObjects[c][key] === lastObjectKey) {
             newString += `${arrOfObjects[c][key]}\n`;
         } else {
