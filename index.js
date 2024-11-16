@@ -157,4 +157,41 @@ for (let a = 0; a < arrOfObjects.length; a++) {
     // console.log(totalAge);
 };
 let averageAge = totalAge / arrOfObjects.length;
-console.log(averageAge);
+// console.log(averageAge);
+
+// PART 5: FULL CIRCLE
+
+let arrOfHeaders = [];
+let newString = "";
+let firstObject = arrOfObjects[0];
+let lastKey = "";
+
+for (let key in arrOfObjects[0]) {
+    arrOfHeaders.push(key); 
+};
+console.log(arrOfHeaders);
+
+for (let h = 0; h < arrOfHeaders.length; h++) {
+    if (h === arrOfHeaders.length - 1) {
+        lastKey = arrOfHeaders[h];
+        newString += `${arrOfHeaders[h].toLocaleUpperCase()}\n`;
+    } else {
+        newString += `${arrOfHeaders[h].toLocaleUpperCase()}, `;
+    };
+};
+console.log(lastKey);
+
+for (let c = 0; c < arrOfObjects.length; c++) {
+    console.log(arrOfObjects[c]);
+    for (let key in arrOfObjects[c]) {
+        let lastObjectKey = arrOfObjects[c][lastKey];
+        console.log(lastObjectKey);
+        if (arrOfObjects[c][key] === lastObjectKey) {
+            newString += `${arrOfObjects[c][key]}\n`;
+        } else {
+            newString += `${arrOfObjects[c][key]}, `;
+        }
+    };
+};
+
+console.log(newString);
