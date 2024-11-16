@@ -132,4 +132,29 @@ for (let i = 1; i < arrOfLilStringsArray.length; i++) {
     }
     arrOfObjects.push(rowObject);
 };
-console.log(arrOfObjects);
+// console.log(arrOfObjects);
+
+// PART 4: SORTING AND MANIPULATING DATA
+
+// 1. Remove the last element from the sorted array.
+    arrOfObjects.pop();
+    // console.log(arrOfObjects);
+
+// 2. Insert the following object at index 1:
+// { id: "48", name: "Barry", occupation: "Runner", age: "25" }
+    arrOfObjects.splice(1, 0, { id: "48", name: "Barry", occupation: "Runner", age: "25" });
+    // console.log(arrOfObjects);
+
+// 3. Add the following object to the end of the array:
+// { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+    arrOfObjects.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
+    console.log(arrOfObjects);
+
+let totalAge = 0;
+for (let a = 0; a < arrOfObjects.length; a++) {
+    // console.log(arrOfObjects[a].age);
+    totalAge += parseInt(arrOfObjects[a].age);
+    // console.log(totalAge);
+};
+let averageAge = totalAge / arrOfObjects.length;
+console.log(averageAge);
